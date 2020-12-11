@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {InputTrackName} from './components/InputTrackName'
+import {TrackersList} from './components/TrackersList'
+import {useSelector} from 'react-redux'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const trackers = useSelector(state => state.tracker.trackers)
+
+    return (
+        <div className="App">
+            <div className='header'>
+                <h1>tracker</h1>
+            </div>
+            <InputTrackName/>
+            {trackers.map(tracker => <TrackersList
+                key={tracker.id}
+                id={tracker.id}
+                title={tracker.title}
+                startTime={tracker.startTime}
+                isActive={tracker.isActive}
+            />)
+            }
+
+        </div>
+    )
 }
 
-export default App;
+export default App
