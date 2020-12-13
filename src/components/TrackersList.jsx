@@ -1,7 +1,7 @@
 import PlayCircleIcon from '../static/img/play_circle_outline-24px.svg'
 import PauseCircleIcon from '../static/img/pause_circle_outline-24px.svg'
 import RemoveCircleIcon from '../static/img/remove_circle_outline-24px.svg'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useDispatch } from 'react-redux'
 import { deleteTracker, pauseTracker, unpauseTracker, updateTime } from '../redux/tracker-reducer'
 import { formatTime } from '../utils/formatTime'
