@@ -1,5 +1,4 @@
-export const formatTime = (ms) => {
-    let seconds = ms / 1000
+export const formatTime = (seconds) => {
     const hours = parseInt(seconds / 3600)
     seconds = seconds % 3600
     const minutes = parseInt(seconds / 60)
